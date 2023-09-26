@@ -1,6 +1,6 @@
 # Back-End da Aplicação de Controle de Estoque - Mercado
 
-Este é o repositório do back-end da nossa aplicação de Controle de Estoque, desenvolvido em PHP 8.1. Este back-end é projetado exclusivamente para lidar com rotas da API, oferecendo um gerenciamento de rotas simples e eficiente, com excelente desempenho. Ele se conecta ao banco de dados PostgreSQL e segue o padrão MVC, mantendo um código limpo e organizado.
+Este é o repositório do back-end da aplicação de Controle de Estoque, desenvolvido em PHP 8.1. Este back-end é projetado exclusivamente para lidar com rotas da API, oferecendo um gerenciamento de rotas simples e eficiente, com excelente desempenho. Ele se conecta ao banco de dados PostgreSQL e segue o padrão MVC, mantendo um código limpo e organizado.
 
 ## Tecnologias Utilizadas
 
