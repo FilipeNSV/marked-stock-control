@@ -67,8 +67,7 @@ Certifique-se de ajustar as rotas e os controladores conforme a estrutura real d
 Para rodar a aplicação, siga os passos abaixo:
 
 1. **Clone este repositório:**
-  ```bash
-  git clone https://github.com/FilipeNSV/controle-estoque-mercado.git
+git clone https://github.com/FilipeNSV/controle-estoque-mercado.git
 
 2. **Navegue até o diretório do projeto:**
 cd seu-repositorio
