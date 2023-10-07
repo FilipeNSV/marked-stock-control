@@ -16,6 +16,15 @@ class HeaderApiMiddleware
    */
   public function handle()
   {
+    if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+      header("Access-Control-Allow-Origin: https://nsvdev.com.br");
+      header("Access-Control-Allow-Methods: GET, POST");
+      header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, X-Requested-With, Authorization");
+      header("Access-Control-Allow-Credentials: true");
+      header("Access-Control-Max-Age: 3600");
+      header("Access-Control-Expose-Headers: X-Custom-Header");
+      exit;
+    }
     header("Access-Control-Allow-Origin: *");
     header("Content-Type: application/json");
     header("Access-Control-Allow-Methods: GET, POST");

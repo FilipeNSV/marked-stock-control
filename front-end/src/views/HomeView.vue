@@ -40,6 +40,8 @@
                 <td v-else> - </td>
                 <td v-if="loadingRequest"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></td>
                 <td v-else> - </td>
+                <td v-if="loadingRequest"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></td>
+                <td v-else> - </td>
               </tr>
             </tbody>
           </table>
