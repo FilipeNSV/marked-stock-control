@@ -31,6 +31,7 @@ class ProductType
           "data" => $productTypes,
         ];
 
+        http_response_code(200);
         header("Content-Type: application/json");
         echo json_encode($response);
       } else {
@@ -81,6 +82,7 @@ class ProductType
         "product_type_id" => $newProductTypeId
       ];
 
+      http_response_code(200);
       header("Content-Type: application/json; charset=UTF-8");
       echo json_encode($response, JSON_UNESCAPED_UNICODE);
     } catch (\PDOException $e) {
@@ -146,6 +148,7 @@ class ProductType
           "message" => "Tipo de produto atualizado com sucesso.",
         ];
 
+        http_response_code(200);
         header("Content-Type: application/json");
         echo json_encode($response);
       } else {
@@ -194,6 +197,7 @@ class ProductType
           "message" => "Tipo de produto deletado com sucesso.",
         ];
 
+        http_response_code(200);
         header("Content-Type: application/json");
         echo json_encode($response);
       } else {
