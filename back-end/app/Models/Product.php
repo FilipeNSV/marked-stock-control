@@ -153,18 +153,6 @@ class Product
   public static function updateProduct($request)
   {
     try {
-      // Verifique se o ID do produto está presente no pedido
-      if (!isset($request['id'])) {
-        $response = [
-          "status" => "error",
-          "message" => "O ID do produto é obrigatório para atualização.",
-        ];
-
-        http_response_code(400); // Bad Request
-        echo json_encode($response);
-        return;
-      }
-
       $id = $request['id'];
       $name = $request['name'] ?? null;
       $description = $request['description'] ?? null;
