@@ -1,3 +1,14 @@
+-- Criação da tabela 'users'
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP,
+    deleted_at TIMESTAMP
+);
+
 -- Criação da tabela 'product_type'
 CREATE TABLE product_type (
     id SERIAL PRIMARY KEY,

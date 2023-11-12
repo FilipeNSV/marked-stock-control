@@ -62,7 +62,7 @@ class Product
   }
 
   /**
-   * Função/Método responsável por cria um novo produto com base nos dados fornecidos.
+   * Função/Método responsável por buscar um produto específico.
    * 
    * @param int $id O ID do produto a ser obtido.
    * @return json $response - com os dados do produto e status de sucesso ou erro.

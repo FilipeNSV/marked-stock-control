@@ -85,7 +85,16 @@ export default {
         this.listStock = response.data.data
 
       }).catch((error) => {
-        console.log(error)
+        if (error.response) {
+          if(error.response.status == 404) {
+            this.alertMsg = error.response.data.message
+            this.alert = true
+            this.alertStatus = false
+            this.loadingBtn = false
+          }
+        } else {
+          console.log(error)
+        }
       })
     },
     updatePaginatedStock (newPaginatedItems) {

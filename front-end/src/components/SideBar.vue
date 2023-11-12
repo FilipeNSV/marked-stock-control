@@ -8,7 +8,7 @@
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <router-link to="/" class="nav-link text-dark">
+          <router-link to="/inicio" class="nav-link text-dark">
             <i class="bi bi-house-fill"></i>
             <span class="d-none d-md-inline">&nbsp;Home</span>
           </router-link>
@@ -24,6 +24,12 @@
             <i class="bi bi-cash"></i>
             <span class="d-none d-md-inline">&nbsp;Transações</span>
           </router-link>
+        </li><hr>
+        <li>
+          <a href="#" @mousedown="logout()" class="nav-link text-dark">
+            <i class="bi bi-door-open"></i>
+            <span class="d-none d-md-inline">&nbsp;Sair</span>
+          </a>
         </li>
       </ul>
       <hr>
@@ -40,6 +46,12 @@
 
 <script>
 export default {
-  name: 'SideBar'
+  name: 'SideBar',
+  methods: {
+    logout () {
+      localStorage.clear()
+      window.location.href = '/'
+    }
+  }
 }
 </script>

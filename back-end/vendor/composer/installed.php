@@ -5,11 +5,20 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '0eaf01a2e53e34b3ed98fb75702edd04ba487236',
+        'reference' => '6d7f71aab971605a513dce5ba081f17e0db6d4a5',
         'name' => 'nsvdev/rotas',
         'dev' => true,
     ),
     'versions' => array(
+        'firebase/php-jwt' => array(
+            'pretty_version' => 'v6.9.0',
+            'version' => '6.9.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../firebase/php-jwt',
+            'aliases' => array(),
+            'reference' => 'f03270e63eaccf3019ef0f32849c497385774e11',
+            'dev_requirement' => false,
+        ),
         'graham-campbell/result-type' => array(
             'pretty_version' => 'v1.1.1',
             'version' => '1.1.1.0',
@@ -43,7 +52,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '0eaf01a2e53e34b3ed98fb75702edd04ba487236',
+            'reference' => '6d7f71aab971605a513dce5ba081f17e0db6d4a5',
             'dev_requirement' => false,
         ),
         'phar-io/manifest' => array(

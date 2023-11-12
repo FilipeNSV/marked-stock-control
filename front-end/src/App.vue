@@ -1,21 +1,31 @@
 <template>
-  <div id="app">
+  <div id="app" v-if="token">
     <SideBar/>
     <!-- <router-view/> -->
+  </div>
+  <div v-else style="background-color: white;">
+    <RegisterLogin/>
   </div>
 </template>
 
 <script>
 import SideBar from './components/SideBar.vue'
+import RegisterLogin from './views/RegisterLoginView.vue'
 
 export default {
   name: 'App',
   data() {
-    return {}
+    return {
+      token: ''
+    }
   },
   components: {
-    SideBar
+    SideBar,
+    RegisterLogin
   },
+  created() {
+    this.token = localStorage.getItem("token") || ''
+  }
 }
 </script>
 

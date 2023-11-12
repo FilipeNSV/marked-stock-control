@@ -15,7 +15,7 @@ class Validations
   {
     $missingFields = [];
     foreach ($requiredFields as $field => $message) {
-      if (!isset($request[$field]) || is_null($request[$field])) {
+      if (!isset($request[$field]) || is_null($request[$field]) || empty($request[$field])) {
         $missingFields[] = $message;
       }
     }

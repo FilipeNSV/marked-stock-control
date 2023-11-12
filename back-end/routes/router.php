@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\HeaderApiMiddleware;
+use App\Http\Middleware\ProtectedRoute;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -42,10 +43,19 @@ if (!array_key_exists($urlParts[2], $routes[$method])) {
   return;
 }
 
+// Faz um foreach de todas as rotas que estão dentro do array do Método(HTTP) solicitado
 foreach ($routes[$method] as $route => $handler) {
   if ($route == $urlParts[2]) {
 
+    // Quando acha a rota, pega o nome do Controller e o Método
     list($controllerName, $action) = explode('@', $handler);
+
+    // Verifica se a rota é protegida
+    if(in_array($route, $protectedRoutes)) {
+      $protectedRoute = new ProtectedRoute;
+      $protectedRoute->authenticateJWT();
+    }
+
     $controllerPath = "App\Http\Controllers\\" . $controllerName;
 
     if ($method == 'GET') {

@@ -16,7 +16,7 @@ class ProductController
 
   public function getProduct($id = null)
   {
-    if ($id == null) {
+    if (is_null($id) || empty($id)) {
       http_response_code(400);
       echo json_encode(array("status" => 'error', "message" => "É necessário passar o id do produto. Ex.: /product-get/1"));
       return;
@@ -49,7 +49,7 @@ class ProductController
   public function updateProduct($request)
   {
     // Verifica se o ID do produto está presente na requisição
-    if (!isset($request['id']) || is_null($request['id'])) {
+    if (!isset($request['id']) || is_null($request['id']) || empty($request['id'])) {
       http_response_code(400);
       echo json_encode(array("status" => 'error', "message" => "O ID do produto é obrigatório para atualização!"));
       return;
@@ -60,7 +60,7 @@ class ProductController
 
   public function deleteProduct($id = null)
   {
-    if ($id == null) {
+    if (is_null($id) || empty($id)) {
       http_response_code(400);
       echo json_encode(array("status" => 'error', "message" => "É necessário passar o id do produto. Ex.: /product-delete/1"));
       return;
@@ -95,7 +95,7 @@ class ProductController
 
   public function deleteProductType($id = null)
   {
-    if ($id == null) {
+    if (is_null($id) || empty($id)) {
       http_response_code(400);
       echo json_encode(array("status" => 'error', "message" => "É necessário passar o id do produto. Ex.: /product-delete/1"));
       return;
