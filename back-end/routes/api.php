@@ -19,7 +19,7 @@ $routes = [
     ],
     "POST" => [
         "user-create" => "UserController@createUser",
-        "user-login" => "AuthController@login@ProtectedRoute",
+        "user-login" => "AuthController@login",
 
         "product-create" => "ProductController@createProduct",
         "product-update" => "ProductController@updateProduct",

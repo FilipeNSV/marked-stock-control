@@ -1,6 +1,6 @@
 # Front-end da Aplicação de Controle de Estoque - Mercado
 
-Este é o repositório do front-end da aplicação de Controle de Estoque, desenvolvido usando Vue.js 3. Esta aplicação possui diversas funcionalidades essenciais para gerenciar o estoque de produtos, incluindo Controle de Estoque, CRUD de Produtos, CRUD de Tipos de Produto e Registro de Transações de Compra e Venda. As funcionalidades são interligadas de maneira que os produtos estão vinculados aos tipos de produtos, e as transações são registradas com base nesses produtos. O controle de estoque fornece um resumo claro do que foi comprado e vendido.
+Este é o repositório do front-end da aplicação de Controle de Estoque, desenvolvido usando Vue.js 3. Esta aplicação possui diversas funcionalidades essenciais para gerenciar o estoque de produtos, incluindo Controle de Estoque, CRUD de Produtos, CRUD de Tipos de Produto e Registro de Transações de Compra, Venda e Autenticação para as rotas. As funcionalidades são interligadas de maneira que os produtos estão vinculados aos tipos de produtos, e as transações são registradas com base nesses produtos. O controle de estoque fornece um resumo claro do que foi comprado e vendido.
 
 ## Tecnologias Utilizadas
 

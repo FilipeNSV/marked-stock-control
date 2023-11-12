@@ -1,6 +1,6 @@
 # Front-end da Aplicação de Controle de Estoque - Mercado
 
-Este é o repositório do front-end da aplicação de Controle de Estoque, desenvolvido usando Vue.js 3. Esta aplicação possui diversas funcionalidades essenciais para gerenciar o estoque de produtos, incluindo Controle de Estoque, CRUD de Produtos, CRUD de Tipos de Produto e Registro de Transações de Compra e Venda. As funcionalidades são interligadas de maneira que os produtos estão vinculados aos tipos de produtos, e as transações são registradas com base nesses produtos. O controle de estoque fornece um resumo claro do que foi comprado e vendido.
+Este é o repositório do front-end da aplicação de Controle de Estoque, desenvolvido usando Vue.js 3. Esta aplicação possui diversas funcionalidades essenciais para gerenciar o estoque de produtos, incluindo Controle de Estoque, CRUD de Produtos, CRUD de Tipos de Produto e Registro de Transações de Compra, Venda e Autenticação para as rotas. As funcionalidades são interligadas de maneira que os produtos estão vinculados aos tipos de produtos, e as transações são registradas com base nesses produtos. O controle de estoque fornece um resumo claro do que foi comprado e vendido.
 
 ## Tecnologias Utilizadas
 
@@ -70,7 +70,7 @@ O Controle de Estoque fornece um resumo das quantidades de produtos disponíveis
 
 # Back-End da Aplicação de Controle de Estoque - Mercado
 
-Este é o repositório do back-end da aplicação de Controle de Estoque, desenvolvido em PHP 8.1. Este back-end é projetado exclusivamente para lidar com rotas da API, oferecendo um gerenciamento de rotas simples e eficiente, com excelente desempenho. Ele se conecta ao banco de dados PostgreSQL e segue o padrão MVC, mantendo um código limpo e organizado.
+Este é o repositório do back-end da aplicação de Controle de Estoque, desenvolvido em PHP 8.1. Este back-end é projetado exclusivamente para lidar com rotas da API, oferecendo um gerenciamento de rotas simples e eficiente, com excelente desempenho. As rotas também tem autenticação para uma melhor segurança da aplicação. Ele se conecta ao banco de dados PostgreSQL e segue o padrão MVC, mantendo um código limpo e organizado.
 
 ## Tecnologias Utilizadas
 
@@ -112,7 +112,7 @@ O Controle de Estoque fornece um resumo das quantidades de produtos disponíveis
 
 A seguir, estão listadas as rotas da API e seus respectivos controladores:
 
-#### Rotas GET
+#### Rotas GET (Com autenticação)
 
 - **GET /api/products-list:** Retorna a lista de produtos. Controlador: `ProductController@listProducts`.
 - **GET /api/product-get:** Retorna detalhes de um produto específico. Controlador: `ProductController@getProduct`.
@@ -122,13 +122,17 @@ A seguir, estão listadas as rotas da API e seus respectivos controladores:
 - **GET /api/product-type-delete:** Marca um tipo de produto como excluído (soft delete). Controlador: `ProductController@deleteProductType`.
 - **GET /api/transaction-list:** Retorna a lista de transações. Controlador: `TransactionController@listTransaction`.
 
-#### Rotas POST
+#### Rotas POST (Com autenticação)
 
 - **POST /api/product-create:** Cria um novo produto. Controlador: `ProductController@createProduct`.
 - **POST /api/product-update:** Atualiza as informações de um produto. Controlador: `ProductController@updateProduct`.
 - **POST /api/product-type-create:** Cria um novo tipo de produto. Controlador: `ProductController@createProductType`.
 - **POST /api/transaction-purchase:** Registra uma transação de compra. Controlador: `TransactionController@purchaseTransaction`.
 - **POST /api/transaction-sale:** Registra uma transação de venda. Controlador: `TransactionController@salesTransaction`.
+
+#### Rotas POST (Sem autenticação)
+- **POST /api/user-create:** Registra um novo usuário. Controlador: `UserController@createUser`.
+- **POST /api/user-login:** Faz a autenticação do usuário. Controlador: `AuthController@login`.
 
 Certifique-se de ajustar as rotas e os controladores conforme a estrutura real do seu projeto.
 
@@ -143,9 +147,9 @@ git clone https://github.com/FilipeNSV/controle-estoque-mercado.git
 cd seu-repositorio
 
 3. **Execute o servidor PHP local na porta desejada (especifique uma porta que não entre em conflito com o front-end):**
-php -S localhost:8080
+php -S localhost:8080 -t public
 
-4. **Configure o arquivo .env com as informações do banco de dados:**
+4. **Configure o arquivo .env com as informações do banco de dados e faça uma JWT_KEY:**
 Exemplo:
 DB_CONNECTION='pgsql'
 DB_HOST='localhost'
@@ -153,3 +157,5 @@ DB_PORT='5432'
 DB_DATABASE='db_market'
 DB_USERNAME='postgres'
 DB_PASSWORD='123'
+
+JWT_KEY=FlhTMdzn7V8KxvFUdsdass61Vyj8To55AXpDE1yDjpsPIpJcjcdsadas3h0skxARpzq
