@@ -32,7 +32,7 @@ class AuthController
     $pdo = Connection::getConnection();
 
     $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
-    $stmt->bindParam(":email", $request['email'], PDO::PARAM_INT);
+    $stmt->bindParam(":email", $request['email'], PDO::PARAM_STR);
     $stmt->execute();
 
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -60,13 +60,13 @@ class AuthController
         $tokenGenerator = JWT::encode($payload, $_ENV['JWT_KEY'], 'HS256');
 
         $response = ['token' => $tokenGenerator, 'name' => $user['name']];
-  
+
         http_response_code(200);
         header("Content-Type: application/json");
         echo json_encode($response);
         return;
       }
-      
+
     } else {
       // Se o usuário não for encontrado, retornar uma mensagem de erro
       $response = [
