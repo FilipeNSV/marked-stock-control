@@ -8,10 +8,10 @@ require_once __DIR__ . '/../vendor/autoload.php';
 $headerMiddleware = new HeaderApiMiddleware;
 $headerMiddleware->handle();
 
-// Obtém a URL da solicitação
+// Obtém a URL(URI) da solicitação
 $url = $_SERVER['REQUEST_URI'];
 
-// Divide a URL em partes
+// Divide a URL(URI) em partes
 $urlParts = explode('/', $url);
 
 if (isset($urlParts[1]) && $urlParts[1] === 'api') {

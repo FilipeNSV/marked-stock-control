@@ -35,7 +35,14 @@ class ProtectedRoute
         exit;
       }
 
+      if ($e->getMessage() == 'Signature verification failed') {
+        http_response_code(401);
+        echo json_encode(['error' => 'Token Inválido!']);
+        exit;
+      }
+
       echo json_encode($e->getMessage());
+      http_response_code(401);
       exit;
     }
 

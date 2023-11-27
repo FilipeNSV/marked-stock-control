@@ -19,7 +19,7 @@ Antes de executar este projeto, certifique-se de ter instalado o Node.js em sua 
 Siga os passos abaixo para configurar e executar o projeto em seu ambiente local:
 
 1. **Clone este repositório:**
-git clone https://github.com/FilipeNSV/controle-estoque-mercado.git
+git clone https://github.com/FilipeNSV/marked-stock-control
 
 2. **Navegue até o diretório do projeto:**
 cd seu-repositorio
@@ -141,7 +141,7 @@ Certifique-se de ajustar as rotas e os controladores conforme a estrutura real d
 Para rodar a aplicação, siga os passos abaixo:
 
 1. **Clone este repositório:**
-git clone https://github.com/FilipeNSV/controle-estoque-mercado.git
+git clone https://github.com/FilipeNSV/marked-stock-control
 
 2. **Navegue até o diretório do projeto:**
 cd seu-repositorio
